@@ -39,7 +39,7 @@ test:
 
 about:
   home: https://github.com/docopt/docopt.R
-  license: MIT + file LICENSE
+  license: MIT
   summary: Define a command-line interface by just giving it a description in the specific format.
   license_family: MIT
 
