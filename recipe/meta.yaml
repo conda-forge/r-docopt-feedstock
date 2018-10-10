@@ -1,4 +1,4 @@
-{% set version = '0.4.5' %}
+{% set version = '0.6' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -10,35 +10,36 @@ package:
 source:
   fn: docopt_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/docopt_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/docopt/docopt_{{ version }}.tar.gz
-  sha256: b6c3bf69b129f09c1adeeabebfd91519eb7fb9f448af82ce84405314807996df
+    - {{ cran_mirror }}/src/contrib/docopt_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/docopt/docopt_{{ version }}.tar.gz
+  sha256: 933558792e7a55a3e59df494e22b79ba063121d198274b88b9a8eed9c796db24
 
 build:
-  number: 1
-  skip: true  # [win32]
-
+  merge_build_host: True  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
 
+# Suggests: testthat
 requirements:
   build:
+    - {{posix}}zip               # [win]
+
+  host:
     - r-base
-    - r-stringr
 
   run:
     - r-base
-    - r-stringr
 
 test:
   commands:
-    - $R -e "library('docopt')"  # [not win]
+    - $R -e "library('docopt')"           # [not win]
     - "\"%R%\" -e \"library('docopt')\""  # [win]
 
 about:
   home: https://github.com/docopt/docopt.R
-  license: MIT
+  license: MIT + file LICENSE
   summary: Define a command-line interface by just giving it a description in the specific format.
   license_family: MIT
 
