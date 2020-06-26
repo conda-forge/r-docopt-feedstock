@@ -1,4 +1,4 @@
-{% set version = "0.7" %}
+{% set version = "0.7.1" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/docopt_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/docopt/docopt_{{ version }}.tar.gz
-  sha256: 5b5c8cb131bbe1aaf3b0e408f11c2a91c293d90a84084469d0c09fab9e4aef88
+  sha256: 9f473887e4607e9b21fd4ab02e802858d0ac2ca6dad9e357a9d884a47fe4b0ff
 
 build:
   noarch: generic
