@@ -1,11 +1,11 @@
-About r-docopt
-==============
+About r-docopt-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-docopt-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/docopt/docopt.R
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-docopt-feedstock/blob/main/LICENSE.txt)
 
 Summary: Define a command-line interface by just giving it a description in the specific format.
 
